@@ -1,0 +1,66 @@
+{
+  "source": "w.webp",
+  "page_count": 1,
+  "engine": "gemini-3.1-flash-lite",
+  "confidence": "review needs_review",
+  "fields": {
+    "civil_services_main_examination_2023": "MARKS OBTAINED",
+    "marks_not_qualified_in_csm_written_examination_2023": "NOT QUALIFIED IN CS(M) WRITTEN EXAMINATION,2023",
+    "disclaimer": "The contents of this site is informatory in nature.You are advised to verify Commission's office."
+  },
+  "tables": [
+    {
+      "title": "qualifying_subjects",
+      "rows": [
+        {
+          "qualifying_subjects": "HINDI (PAPER-I)",
+          "marks": "097"
+        },
+        {
+          "qualifying_subjects": "ENGLISH (PAPER-II)",
+          "marks": "103"
+        }
+      ]
+    },
+    {
+      "title": "main_subjects",
+      "rows": [
+        {
+          "main_subjects": "ESSAY (PAPER-I)",
+          "marks": "099"
+        },
+        {
+          "main_subjects": "GENERAL STUDIES -I (PAPER-II)",
+          "marks": "078"
+        },
+        {
+          "main_subjects": "GENERAL STUDIES -II (PAPER-III)",
+          "marks": "093"
+        },
+        {
+          "main_subjects": "GENERAL STUDIES -III (PAPER-IV)",
+          "marks": "075"
+        },
+        {
+          "main_subjects": "GENERAL STUDIES -IV (PAPER-V)",
+          "marks": "099"
+        },
+        {
+          "main_subjects": "OPTIONAL-I (POLITICAL SCIENCE & INTERNATIONAL RELATIONS) (PAPER-VI)",
+          "marks": "144"
+        },
+        {
+          "main_subjects": "OPTIONAL-II (POLITICAL SCIENCE & INTERNATIONAL RELATIONS) (PAPER-VII)",
+          "marks": "110"
+        },
+        {
+          "main_subjects": "WRITTEN TOTAL",
+          "marks": "698"
+        }
+      ]
+    }
+  ],
+  "co_row": {},
+  "needs_review": [],
+  "text": "CIVIL SERVICES (MAIN) EXAMINATION, 2023 MARKS OBTAINED QUALIFYING SUBJECTS MARKS HINDI (PAPER-I) 097 ENGLISH (PAPER-II) 103 MAIN SUBJECTS MARKS ESSAY (PAPER-I) 099 GENERAL STUDIES -I (PAPER-II) 078 GENERAL STUDIES -II (PAPER-III) 093 GENERAL STUDIES -III (PAPER-IV) 075 GENERAL STUDIES -IV (PAPER-V) 099 OPTIONAL-I (POLITICAL SCIENCE & INTERNATIONAL RELATIONS) (PAPER-VI) 144 OPTIONAL-II (POLITICAL SCIENCE & INTERNATIONAL RELATIONS) (PAPER-VII) 110 WRITTEN TOTAL 698 rks :-NOT QUALIFIED IN CS(M) WRITTEN EXAMINATION,2023 Disclaimer The contents of this site is informatory in nature.You are advised to verify Commission's office."
+}

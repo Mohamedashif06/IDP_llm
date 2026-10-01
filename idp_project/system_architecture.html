@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>System Architecture - Privacy-Preserving Multi-Document IDP</title>
+  <script src="https://www.gstatic.com/antigravity/web/dev/tailwindcss.min.js"></script>
+  <style>
+    .glass-card {
+      background: rgba(255, 255, 255, 0.05);
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+    }
+  </style>
+</head>
+<body class="bg-slate-900 text-slate-100 font-sans p-6 min-h-screen">
+  <div class="max-w-5xl mx-auto space-y-8">
+
+    <!-- Header -->
+    <div class="text-center space-y-2 border-b border-slate-700 pb-6">
+      <div class="inline-block px-3 py-1 bg-blue-500/20 text-blue-400 text-xs font-semibold rounded-full uppercase tracking-wider">
+        System Architecture Diagram
+      </div>
+      <h1 class="text-3xl font-bold tracking-tight text-white">
+        A Privacy-Preserving Multi-Document IDP Architecture
+      </h1>
+      <p class="text-slate-400 text-sm max-w-2xl mx-auto">
+        End-to-End Classify-then-Extract Pipeline using Local Open-Weight Qwen VLM served via Ollama
+      </p>
+    </div>
+
+    <!-- 5 Processing Layers Diagram -->
+    <div class="space-y-6">
+
+      <!-- Layer 1: Ingestion -->
+      <div class="bg-slate-800/80 border border-slate-700 rounded-xl p-5 shadow-lg relative">
+        <div class="flex items-center justify-between mb-4">
+          <span class="text-xs font-bold text-blue-400 uppercase tracking-wider">Layer 1: Multi-Format Ingestion</span>
+          <span class="text-xs bg-slate-700 text-slate-300 px-2 py-0.5 rounded">Input Handling</span>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-4 text-center">
+          <div class="bg-slate-900/60 p-3 rounded-lg border border-slate-700">
+            <div class="text-2xl mb-1">📷</div>
+            <div class="font-semibold text-sm text-slate-200">Camera / Scans</div>
+            <div class="text-xs text-slate-400">EXIF + Contrast Sharpening</div>
+          </div>
+          <div class="bg-slate-900/60 p-3 rounded-lg border border-slate-700">
+            <div class="text-2xl mb-1">📄</div>
+            <div class="font-semibold text-sm text-slate-200">PDF Documents</div>
+            <div class="text-xs text-slate-400">PyMuPDF 150 DPI Render</div>
+          </div>
+          <div class="bg-slate-900/60 p-3 rounded-lg border border-slate-700">
+            <div class="text-2xl mb-1">📝</div>
+            <div class="font-semibold text-sm text-slate-200">Word (.docx)</div>
+            <div class="text-xs text-slate-400">python-docx Direct Read</div>
+          </div>
+          <div class="bg-slate-900/60 p-3 rounded-lg border border-slate-700">
+            <div class="text-2xl mb-1">📊</div>
+            <div class="font-semibold text-sm text-slate-200">Excel (.xlsx)</div>
+            <div class="text-xs text-slate-400">openpyxl Direct Read</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Arrow Down -->
+      <div class="text-center text-blue-400 text-xl font-bold">↓</div>
+
+      <!-- Layer 2 & 3: Classification & Schema Selection -->
+      <div class="bg-slate-800/80 border border-slate-700 rounded-xl p-5 shadow-lg space-y-4">
+        <div class="flex items-center justify-between">
+          <span class="text-xs font-bold text-indigo-400 uppercase tracking-wider">Layer 2 & 3: Classification & Dynamic Schema Routing</span>
+          <span class="text-xs bg-indigo-500/20 text-indigo-300 px-2 py-0.5 rounded">Local Inference</span>
+        </div>
+        
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <div class="bg-slate-900/70 p-4 rounded-lg border border-indigo-500/30">
+            <div class="font-semibold text-sm text-indigo-300 mb-1">Qwen VLM Category Prediction</div>
+            <p class="text-xs text-slate-400">
+              Model evaluates page and outputs <code class="text-indigo-400">{"type": t*, "confidence": c_cls}</code>
+            </p>
+          </div>
+          <div class="bg-slate-900/70 p-4 rounded-lg border border-indigo-500/30">
+            <div class="font-semibold text-sm text-indigo-300 mb-1">Tau Threshold Routing Gate</div>
+            <p class="text-xs text-slate-400">
+              If <code class="text-emerald-400">c_cls ≥ 0.60</code> ➔ Select <code class="text-emerald-400">TEMPLATES[t*]</code><br>
+              Else ➔ Fallback to <code class="text-amber-400">GENERIC Schema</code>
+            </p>
+          </div>
+        </div>
+
+        <!-- Catalogued Schemas List -->
+        <div class="grid grid-cols-2 md:grid-cols-6 gap-2 text-center text-xs">
+          <div class="bg-emerald-900/30 border border-emerald-500/30 p-2 rounded text-emerald-300 font-medium">Mark Sheet</div>
+          <div class="bg-emerald-900/30 border border-emerald-500/30 p-2 rounded text-emerald-300 font-medium">Invoice</div>
+          <div class="bg-emerald-900/30 border border-emerald-500/30 p-2 rounded text-emerald-300 font-medium">Certificate</div>
+          <div class="bg-emerald-900/30 border border-emerald-500/30 p-2 rounded text-emerald-300 font-medium">ID Card</div>
+          <div class="bg-emerald-900/30 border border-emerald-500/30 p-2 rounded text-emerald-300 font-medium">Attendance Reg.</div>
+          <div class="bg-amber-900/30 border border-amber-500/30 p-2 rounded text-amber-300 font-medium">GENERIC Fallback</div>
+        </div>
+      </div>
+
+      <!-- Arrow Down -->
+      <div class="text-center text-indigo-400 text-xl font-bold">↓</div>
+
+      <!-- Layer 4: Extraction & Repair -->
+      <div class="bg-slate-800/80 border border-slate-700 rounded-xl p-5 shadow-lg space-y-3">
+        <div class="flex items-center justify-between">
+          <span class="text-xs font-bold text-purple-400 uppercase tracking-wider">Layer 4: Schema-Constrained VLM Extraction & JSON Safety</span>
+          <span class="text-xs bg-purple-500/20 text-purple-300 px-2 py-0.5 rounded">Ollama REST API (temp=0.0)</span>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-3 text-center text-xs">
+          <div class="bg-slate-900/60 p-3 rounded border border-slate-700">
+            <div class="font-semibold text-purple-300">1. Fence Stripping</div>
+            <div class="text-slate-400 mt-1">Strips markdown ```json fences</div>
+          </div>
+          <div class="bg-slate-900/60 p-3 rounded border border-slate-700">
+            <div class="font-semibold text-purple-300">2. json_repair Library</div>
+            <div class="text-slate-400 mt-1">Repairs unclosed quotes/braces</div>
+          </div>
+          <div class="bg-slate-900/60 p-3 rounded border border-slate-700">
+            <div class="font-semibold text-purple-300">3. Regex Fallback</div>
+            <div class="text-slate-400 mt-1">Extracts key-value pairs via regex</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Arrow Down -->
+      <div class="text-center text-purple-400 text-xl font-bold">↓</div>
+
+      <!-- Layer 5: Confidence & Review -->
+      <div class="bg-slate-800/80 border border-slate-700 rounded-xl p-5 shadow-lg">
+        <div class="flex items-center justify-between mb-3">
+          <span class="text-xs font-bold text-amber-400 uppercase tracking-wider">Layer 5: Blank-Aware Confidence Review Rule</span>
+          <span class="text-xs bg-amber-500/20 text-amber-300 px-2 py-0.5 rounded">Human-in-the-Loop Safeguard</span>
+        </div>
+        <div class="bg-slate-900/80 p-4 rounded-lg border border-amber-500/30 text-center">
+          <div class="font-mono text-sm text-amber-300 font-semibold">
+            review(f) = 1 &nbsp;IF&nbsp; (c(f) &lt; θ_t &nbsp;OR&nbsp; value(f) IS NULL) &nbsp;ELSE&nbsp; 0
+          </div>
+          <div class="text-xs text-slate-400 mt-2">
+            Selected Operating Point: <span class="text-amber-400 font-semibold">θ = 0.70</span> | 100% Error Capture Rate (0 Missed Errors)
+          </div>
+        </div>
+      </div>
+
+      <!-- Arrow Down -->
+      <div class="text-center text-amber-400 text-xl font-bold">↓</div>
+
+      <!-- Export Layer -->
+      <div class="bg-slate-800/80 border border-slate-700 rounded-xl p-5 shadow-lg">
+        <div class="flex items-center justify-between mb-4">
+          <span class="text-xs font-bold text-emerald-400 uppercase tracking-wider">Layer 6: Type-Split Excel Export</span>
+          <span class="text-xs bg-emerald-500/20 text-emerald-300 px-2 py-0.5 rounded">Auditable Multi-Sheet Workbook</span>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-3 text-center text-xs">
+          <div class="bg-slate-900/60 p-3 rounded border border-emerald-500/30">
+            <div class="font-semibold text-emerald-300">Summary Sheet</div>
+            <div class="text-slate-400 mt-1">S.No, Document Type, Reliability, Review Count</div>
+          </div>
+          <div class="bg-slate-900/60 p-3 rounded border border-emerald-500/30">
+            <div class="font-semibold text-emerald-300">Summary_&lt;type&gt;</div>
+            <div class="text-slate-400 mt-1">Per-type wide sheets with specialized schema columns</div>
+          </div>
+          <div class="bg-slate-900/60 p-3 rounded border border-emerald-500/30">
+            <div class="font-semibold text-emerald-300">Fields Sheet</div>
+            <div class="text-slate-400 mt-1">Long format per-field audit with Confidence & Flag</div>
+          </div>
+          <div class="bg-slate-900/60 p-3 rounded border border-emerald-500/30">
+            <div class="font-semibold text-emerald-300">Table Data Sheet</div>
+            <div class="text-slate-400 mt-1">Indexed table cells joined by Serial Number S.No</div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+</body>
+</html>

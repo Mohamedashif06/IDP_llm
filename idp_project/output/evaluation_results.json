@@ -1,0 +1,308 @@
+{
+  "table_v": {
+    "mark_sheet": {
+      "docs": 12,
+      "correct": 11,
+      "acc_pct": 91.7,
+      "most_common_confusion": "other"
+    },
+    "invoice": {
+      "docs": 10,
+      "correct": 9,
+      "acc_pct": 90.0,
+      "most_common_confusion": "other"
+    },
+    "certificate": {
+      "docs": 10,
+      "correct": 10,
+      "acc_pct": 100.0,
+      "most_common_confusion": "None"
+    },
+    "id_card": {
+      "docs": 8,
+      "correct": 8,
+      "acc_pct": 100.0,
+      "most_common_confusion": "None"
+    },
+    "other": {
+      "docs": 5,
+      "correct": 5,
+      "acc_pct": 100.0,
+      "most_common_confusion": "None"
+    },
+    "all": {
+      "docs": 45,
+      "correct": 43,
+      "acc_pct": 95.6,
+      "most_common_confusion": "-"
+    }
+  },
+  "table_vi": {
+    "mark_sheet": {
+      "docs": 12,
+      "fields": 144,
+      "exact_pct": 99.3,
+      "afield_pct": 99.9,
+      "errors_flagged_pct": 100.0
+    },
+    "invoice": {
+      "docs": 10,
+      "fields": 80,
+      "exact_pct": 100.0,
+      "afield_pct": 100.0,
+      "errors_flagged_pct": 100.0
+    },
+    "certificate": {
+      "docs": 10,
+      "fields": 60,
+      "exact_pct": 100.0,
+      "afield_pct": 100.0,
+      "errors_flagged_pct": 100.0
+    },
+    "id_card": {
+      "docs": 8,
+      "fields": 40,
+      "exact_pct": 100.0,
+      "afield_pct": 100.0,
+      "errors_flagged_pct": 100.0
+    },
+    "other": {
+      "docs": 5,
+      "fields": 20,
+      "exact_pct": 95.0,
+      "afield_pct": 97.1,
+      "errors_flagged_pct": 100.0
+    },
+    "all_typed": {
+      "docs": 45,
+      "fields": 344,
+      "exact_pct": 99.4,
+      "afield_pct": 99.8,
+      "errors_flagged_pct": 100.0
+    }
+  },
+  "table_vii": [
+    {
+      "field": "Roll number",
+      "source": "24UCS019",
+      "extracted": "24UCS019",
+      "match": "Exact Match"
+    },
+    {
+      "field": "Register number",
+      "source": "920424104121",
+      "extracted": "920424104121",
+      "match": "Exact Match"
+    },
+    {
+      "field": "Degree and branch",
+      "source": "B.E CSE-B",
+      "extracted": "B.E CSE-B",
+      "match": "Exact Match"
+    },
+    {
+      "field": "Course code / name",
+      "source": "CS2303 \u2013 ML Techniques",
+      "extracted": "CS2303 \u2013 ML Techniques",
+      "match": "Exact Match"
+    },
+    {
+      "field": "Year and semester",
+      "source": "IIIrd \u2013 Vth",
+      "extracted": "IIIrd \u2013 Vth",
+      "match": "Exact Match"
+    },
+    {
+      "field": "No. of pages used",
+      "source": "14",
+      "extracted": "14",
+      "match": "Exact Match"
+    },
+    {
+      "field": "Instruction text",
+      "source": "(printed)",
+      "extracted": "(printed)",
+      "match": "Exact Match"
+    },
+    {
+      "field": "Date and session",
+      "source": "28.8.2026 FN",
+      "extracted": "28.8.2026 FN",
+      "match": "Exact Match"
+    },
+    {
+      "field": "Examiner name / sign.",
+      "source": "Blank",
+      "extracted": "null (Flagged for Review)",
+      "match": "Correctly Flagged"
+    },
+    {
+      "field": "Grand total in words",
+      "source": "Blank",
+      "extracted": "null (Flagged for Review)",
+      "match": "Correctly Flagged"
+    }
+  ],
+  "table_viii": [
+    {
+      "cell": "Q1\u2013Q5 (Part A)",
+      "source": "0, 1, 0, 1, 0",
+      "extracted": "0, 1, 0, 1, 0",
+      "status": "Matched"
+    },
+    {
+      "cell": "Part A total",
+      "source": "2",
+      "extracted": "2",
+      "status": "Matched"
+    },
+    {
+      "cell": "Q6a",
+      "source": "7",
+      "extracted": "7",
+      "status": "Matched"
+    },
+    {
+      "cell": "Q7a (I / II)",
+      "source": "7 / 5",
+      "extracted": "7 / 5",
+      "status": "Matched"
+    },
+    {
+      "cell": "Q7a total",
+      "source": "12",
+      "extracted": "12",
+      "status": "Matched"
+    },
+    {
+      "cell": "Q8a",
+      "source": "10",
+      "extracted": "10",
+      "status": "Matched"
+    },
+    {
+      "cell": "Part B&C subtotal",
+      "source": "29",
+      "extracted": "29",
+      "status": "Matched"
+    },
+    {
+      "cell": "Grand total",
+      "source": "31",
+      "extracted": "31",
+      "status": "Reconciled (2 + 29 = 31)"
+    }
+  ],
+  "table_ix": [
+    {
+      "format": "Photo / scan",
+      "path": "Preprocess + VLM",
+      "files": 25,
+      "processed_ok": 25,
+      "vlm_calls": "1 + 1 per page"
+    },
+    {
+      "format": "PDF",
+      "path": "PyMuPDF + VLM",
+      "files": 12,
+      "processed_ok": 12,
+      "vlm_calls": "1 + 1 per page"
+    },
+    {
+      "format": "DOCX",
+      "path": "python-docx direct",
+      "files": 4,
+      "processed_ok": 4,
+      "vlm_calls": "0"
+    },
+    {
+      "format": "XLSX",
+      "path": "openpyxl direct",
+      "files": 4,
+      "processed_ok": 4,
+      "vlm_calls": "0"
+    }
+  ],
+  "table_x": {
+    "digit_acc": {
+      "digit_cnn": "86.9%",
+      "qwen": "91.2%",
+      "gemini": "93.8%",
+      "tesseract": "81.2%"
+    },
+    "kv_acc": {
+      "digit_cnn": "N/A",
+      "qwen": "88.4%",
+      "gemini": "89.5%",
+      "tesseract": "76.4%"
+    },
+    "mark_sheet_acc": {
+      "digit_cnn": "86.4% (cells)",
+      "qwen": "89.1%",
+      "gemini": "90.2%",
+      "tesseract": "62.1%"
+    },
+    "unstructured_acc": {
+      "digit_cnn": "N/A",
+      "qwen": "85.0%",
+      "gemini": "92.1%",
+      "tesseract": "68.3%"
+    },
+    "time_per_page": {
+      "digit_cnn": "5 ms (CPU)",
+      "qwen": "3.4 s (GPU)",
+      "gemini": "1.2 s (API)",
+      "tesseract": "0.8 s (CPU)"
+    },
+    "off_site_data": {
+      "digit_cnn": "No",
+      "qwen": "No",
+      "gemini": "Yes",
+      "tesseract": "No"
+    }
+  },
+  "table_xi": [
+    {
+      "theta": 0.5,
+      "flagged_pct": 7.0,
+      "wrong_flagged": 0,
+      "missed_errors": 2,
+      "fields_per_error_caught": 24.0
+    },
+    {
+      "theta": 0.6,
+      "flagged_pct": 7.3,
+      "wrong_flagged": 0,
+      "missed_errors": 1,
+      "fields_per_error_caught": 25.0
+    },
+    {
+      "theta": 0.7,
+      "flagged_pct": 8.7,
+      "wrong_flagged": 4,
+      "missed_errors": 0,
+      "fields_per_error_caught": 15.0
+    },
+    {
+      "theta": 0.8,
+      "flagged_pct": 13.1,
+      "wrong_flagged": 19,
+      "missed_errors": 0,
+      "fields_per_error_caught": 22.5
+    },
+    {
+      "theta": 0.9,
+      "flagged_pct": 19.8,
+      "wrong_flagged": 42,
+      "missed_errors": 0,
+      "fields_per_error_caught": 34.0
+    },
+    {
+      "theta": 0.95,
+      "flagged_pct": 66.3,
+      "wrong_flagged": 202,
+      "missed_errors": 0,
+      "fields_per_error_caught": 114.0
+    }
+  ]
+}

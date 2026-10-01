@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>IEEE Paper Benchmark Visualizations &amp; Graphs</title>
+  <script src="https://www.gstatic.com/antigravity/web/dev/tailwindcss.min.js"></script>
+  <style>
+    .tab-active {
+      border-bottom: 3px solid #003366;
+      color: #003366;
+      font-weight: 700;
+    }
+  </style>
+</head>
+<body class="bg-[var(--background)] text-[var(--foreground)] antialiased p-6">
+  <div class="max-w-6xl mx-auto space-y-6">
+    
+    <!-- Header -->
+    <div class="bg-[var(--card)] border border-[var(--border)] rounded-xl p-6 shadow-sm flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
+      <div>
+        <div class="inline-flex items-center gap-2 bg-blue-100 dark:bg-blue-950 text-blue-800 dark:text-blue-200 px-3 py-1 rounded-full text-xs font-semibold mb-2">
+          IEEE Paper Visual Figures &amp; Graphs
+        </div>
+        <h1 class="text-2xl font-bold text-[var(--foreground)]">Empirical Benchmark Graphs</h1>
+        <p class="text-sm text-[var(--muted-foreground)]">A Privacy-Preserving Multi-Document IDP System Using Local Vision-Language Model</p>
+      </div>
+      <div class="flex gap-2 text-xs font-medium">
+        <span class="px-3 py-1.5 rounded-lg bg-green-100 text-green-800 dark:bg-green-900 dark:text-green-200 font-semibold">✓ 11/11 Review Points Addressed</span>
+        <span class="px-3 py-1.5 rounded-lg bg-blue-100 text-blue-800 dark:bg-blue-900 dark:text-blue-200 font-semibold">N=45 Test Pages</span>
+      </div>
+    </div>
+
+    <!-- Navigation Tabs -->
+    <div class="flex border-b border-[var(--border)] gap-6 text-sm font-medium">
+      <button id="tab1-btn" onclick="showTab(1)" class="py-3 px-1 tab-active flex items-center gap-2">
+        <span>📈 Fig 6: Threshold Curl Curve</span>
+      </button>
+      <button id="tab2-btn" onclick="showTab(2)" class="py-3 px-1 text-[var(--muted-foreground)] hover:text-[var(--foreground)] flex items-center gap-2">
+        <span>📊 Fig 7: Type Accuracy &amp; Latency</span>
+      </button>
+      <button id="tab3-btn" onclick="showTab(3)" class="py-3 px-1 text-[var(--muted-foreground)] hover:text-[var(--foreground)] flex items-center gap-2">
+        <span>🏆 Fig 8: Baseline Comparison</span>
+      </button>
+    </div>
+
+    <!-- TAB 1: Fig 6 Threshold Curl Curve -->
+    <div id="tab1" class="space-y-6">
+      <div class="bg-[var(--card)] border border-[var(--border)] rounded-xl p-6 shadow-sm">
+        <h2 class="text-lg font-bold text-[var(--foreground)] mb-1">Fig. 6: Human Review Threshold (θ) Operating Curve</h2>
+        <p class="text-sm text-[var(--muted-foreground)] mb-4">Trade-off between Error Capture Rate (%) and Human Review Workload (% Flagged) across threshold sweep θ ∈ [0.50, 0.95].</p>
+
+        <!-- SVG Graph 6 -->
+        <div class="w-full overflow-x-auto bg-white p-4 rounded-lg border border-gray-200">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 460" class="w-full h-auto max-w-4xl mx-auto">
+            <!-- Grid Lines -->
+            <line x1="80" y1="360" x2="720" y2="360" stroke="#eeeeee" stroke-width="1"/>
+            <line x1="80" y1="290" x2="720" y2="290" stroke="#eeeeee" stroke-width="1"/>
+            <line x1="80" y1="220" x2="720" y2="220" stroke="#eeeeee" stroke-width="1"/>
+            <line x1="80" y1="150" x2="720" y2="150" stroke="#eeeeee" stroke-width="1"/>
+            <line x1="80" y1="80" x2="720" y2="80" stroke="#eeeeee" stroke-width="1"/>
+            
+            <!-- Axes -->
+            <line x1="80" y1="360" x2="720" y2="360" stroke="#333333" stroke-width="2"/>
+            <line x1="80" y1="60" x2="80" y2="360" stroke="#003366" stroke-width="2"/>
+            <line x1="720" y1="60" x2="720" y2="360" stroke="#d9534f" stroke-width="2"/>
+            
+            <!-- Y-Axis 1 Labels (Left - Error Capture %) -->
+            <text x="70" y="365" text-anchor="end" font-size="11" fill="#003366">0%</text>
+            <text x="70" y="295" text-anchor="end" font-size="11" fill="#003366">25%</text>
+            <text x="70" y="225" text-anchor="end" font-size="11" fill="#003366">50%</text>
+            <text x="70" y="155" text-anchor="end" font-size="11" fill="#003366">75%</text>
+            <text x="70" y="85" text-anchor="end" font-size="11" fill="#003366" font-weight="bold">100%</text>
+            <text x="25" y="210" text-anchor="middle" font-size="12" font-weight="bold" fill="#003366" transform="rotate(-90, 25, 210)">Error Capture Rate (%)</text>
+            
+            <!-- Y-Axis 2 Labels (Right - Flagged Review %) -->
+            <text x="730" y="365" text-anchor="start" font-size="11" fill="#d9534f">0%</text>
+            <text x="730" y="295" text-anchor="start" font-size="11" fill="#d9534f">20%</text>
+            <text x="730" y="225" text-anchor="start" font-size="11" fill="#d9534f">40%</text>
+            <text x="730" y="155" text-anchor="start" font-size="11" fill="#d9534f">60%</text>
+            <text x="730" y="85" text-anchor="start" font-size="11" fill="#d9534f">80%</text>
+            <text x="775" y="210" text-anchor="middle" font-size="12" font-weight="bold" fill="#d9534f" transform="rotate(90, 775, 210)">Flagged for Review (%)</text>
+            
+            <!-- X-Axis Labels (Threshold theta) -->
+            <text x="140" y="385" text-anchor="middle" font-size="12" fill="#333333">0.50</text>
+            <text x="250" y="385" text-anchor="middle" font-size="12" fill="#333333">0.60</text>
+            <text x="360" y="385" text-anchor="middle" font-size="12" font-weight="bold" fill="#008000">0.70 (Optimal)</text>
+            <text x="470" y="385" text-anchor="middle" font-size="12" fill="#333333">0.80</text>
+            <text x="580" y="385" text-anchor="middle" font-size="12" fill="#333333">0.90</text>
+            <text x="660" y="385" text-anchor="middle" font-size="12" fill="#333333">0.95</text>
+            <text x="400" y="415" text-anchor="middle" font-size="13" font-weight="bold" fill="#333333">Confidence Threshold Score (θ)</text>
+            
+            <!-- Curve 1: Error Capture Rate (Blue Line) -->
+            <polyline points="140,172 250,117 360,80 470,80 580,80 660,80" fill="none" stroke="#003366" stroke-width="4"/>
+            <circle cx="140" cy="172" r="5" fill="#003366"/>
+            <circle cx="250" cy="117" r="5" fill="#003366"/>
+            <circle cx="360" cy="80" r="7" fill="#008000" stroke="#ffffff" stroke-width="2"/>
+            <circle cx="470" cy="80" r="5" fill="#003366"/>
+            <circle cx="580" cy="80" r="5" fill="#003366"/>
+            <circle cx="660" cy="80" r="5" fill="#003366"/>
+            
+            <!-- Curve 2: Flagged for Review % (Red Line) -->
+            <polyline points="140,334 250,333 360,327 470,311 580,286 660,111" fill="none" stroke="#d9534f" stroke-width="4" stroke-dasharray="6,4"/>
+            <circle cx="140" cy="334" r="5" fill="#d9534f"/>
+            <circle cx="250" cy="333" r="5" fill="#d9534f"/>
+            <circle cx="360" cy="327" r="7" fill="#008000" stroke="#ffffff" stroke-width="2"/>
+            <circle cx="470" cy="311" r="5" fill="#d9534f"/>
+            <circle cx="580" cy="286" r="5" fill="#d9534f"/>
+            <circle cx="660" cy="111" r="5" fill="#d9534f"/>
+
+            <!-- Operating Point Highlight Line -->
+            <line x1="360" y1="60" x2="360" y2="360" stroke="#008000" stroke-width="2" stroke-dasharray="4,4"/>
+            
+            <!-- Callout Box -->
+            <rect x="380" y="100" width="220" height="90" fill="#f0fff0" stroke="#008000" stroke-width="2" rx="6"/>
+            <text x="390" y="122" font-size="12" font-weight="bold" fill="#008000">Selected Point: θ = 0.70</text>
+            <text x="390" y="142" font-size="11" fill="#333333">✓ 100.0% Error Capture Rate</text>
+            <text x="390" y="160" font-size="11" fill="#333333">✓ 8.7% Human Review Burden</text>
+            <text x="390" y="178" font-size="11" fill="#333333">✓ 0 Missed Extraction Errors</text>
+
+            <!-- Legend -->
+            <rect x="220" y="430" width="360" height="24" fill="#f9f9f9" stroke="#cccccc" stroke-width="1" rx="4"/>
+            <line x1="240" y1="442" x2="270" y2="442" stroke="#003366" stroke-width="3"/>
+            <circle cx="255" cy="442" r="4" fill="#003366"/>
+            <text x="280" y="446" font-size="11" fill="#333333">Error Capture Rate (%)</text>
+
+            <line x1="410" y1="442" x2="440" y2="442" stroke="#d9534f" stroke-width="3" stroke-dasharray="4,3"/>
+            <circle cx="425" cy="442" r="4" fill="#d9534f"/>
+            <text x="450" y="446" font-size="11" fill="#333333">Flagged for Review (%)</text>
+          </svg>
+        </div>
+
+        <!-- Data Summary Grid -->
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mt-6">
+          <div class="bg-[var(--background)] p-4 rounded-lg border border-[var(--border)]">
+            <span class="text-xs text-[var(--muted-foreground)] block font-medium">Selected Threshold</span>
+            <span class="text-xl font-bold text-green-600">θ = 0.70</span>
+          </div>
+          <div class="bg-[var(--background)] p-4 rounded-lg border border-[var(--border)]">
+            <span class="text-xs text-[var(--muted-foreground)] block font-medium">Error Capture Rate</span>
+            <span class="text-xl font-bold text-blue-600">100.0%</span>
+          </div>
+          <div class="bg-[var(--background)] p-4 rounded-lg border border-[var(--border)]">
+            <span class="text-xs text-[var(--muted-foreground)] block font-medium">Human Review Burden</span>
+            <span class="text-xl font-bold text-red-500">8.7%</span>
+          </div>
+          <div class="bg-[var(--background)] p-4 rounded-lg border border-[var(--border)]">
+            <span class="text-xs text-[var(--muted-foreground)] block font-medium">Missed Errors</span>
+            <span class="text-xl font-bold text-green-600">0 Fields</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- TAB 2: Fig 7 Type Accuracy & Latency -->
+    <div id="tab2" class="space-y-6 hidden">
+      <div class="bg-[var(--card)] border border-[var(--border)] rounded-xl p-6 shadow-sm">
+        <h2 class="text-lg font-bold text-[var(--foreground)] mb-1">Fig. 7: Classification Accuracy &amp; Latency per Document Type</h2>
+        <p class="text-sm text-[var(--muted-foreground)] mb-4">Empirical evaluation of document-type classification accuracy and processing time across categories.</p>
+
+        <!-- SVG Graph 7 -->
+        <div class="w-full overflow-x-auto bg-white p-4 rounded-lg border border-gray-200">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450" class="w-full h-auto max-w-4xl mx-auto">
+            <!-- Grid Lines -->
+            <line x1="100" y1="350" x2="700" y2="350" stroke="#eeeeee" stroke-width="1"/>
+            <line x1="100" y1="280" x2="700" y2="280" stroke="#eeeeee" stroke-width="1"/>
+            <line x1="100" y1="210" x2="700" y2="210" stroke="#eeeeee" stroke-width="1"/>
+            <line x1="100" y1="140" x2="700" y2="140" stroke="#eeeeee" stroke-width="1"/>
+            <line x1="100" y1="70" x2="700" y2="70" stroke="#eeeeee" stroke-width="1"/>
+            
+            <!-- Axes -->
+            <line x1="100" y1="350" x2="700" y2="350" stroke="#333333" stroke-width="2"/>
+            <line x1="100" y1="50" x2="100" y2="350" stroke="#003366" stroke-width="2"/>
+            <line x1="700" y1="50" x2="700" y2="350" stroke="#ff9900" stroke-width="2"/>
+            
+            <!-- Y1 Labels (Left - Accuracy %) -->
+            <text x="90" y="355" text-anchor="end" font-size="11" fill="#003366">0%</text>
+            <text x="90" y="285" text-anchor="end" font-size="11" fill="#003366">25%</text>
+            <text x="90" y="215" text-anchor="end" font-size="11" fill="#003366">50%</text>
+            <text x="90" y="145" text-anchor="end" font-size="11" fill="#003366">75%</text>
+            <text x="90" y="75" text-anchor="end" font-size="11" fill="#003366" font-weight="bold">100%</text>
+            <text x="45" y="200" text-anchor="middle" font-size="12" font-weight="bold" fill="#003366" transform="rotate(-90, 45, 200)">Classification Accuracy (%)</text>
+            
+            <!-- Y2 Labels (Right - Latency s) -->
+            <text x="710" y="355" text-anchor="start" font-size="11" fill="#ff9900">0.0 s</text>
+            <text x="710" y="285" text-anchor="start" font-size="11" fill="#ff9900">1.25 s</text>
+            <text x="710" y="215" text-anchor="start" font-size="11" fill="#ff9900">2.50 s</text>
+            <text x="710" y="145" text-anchor="start" font-size="11" fill="#ff9900">3.75 s</text>
+            <text x="710" y="75" text-anchor="start" font-size="11" fill="#ff9900" font-weight="bold">5.00 s</text>
+            <text x="755" y="200" text-anchor="middle" font-size="12" font-weight="bold" fill="#ff9900" transform="rotate(90, 755, 200)">Processing Latency (s)</text>
+            
+            <!-- Bars (Accuracy) -->
+            <rect x="130" y="93" width="50" height="257" fill="#003366" rx="3"/>
+            <text x="155" y="84" text-anchor="middle" font-size="11" font-weight="bold" fill="#003366">91.7%</text>
+            
+            <rect x="250" y="98" width="50" height="252" fill="#003366" rx="3"/>
+            <text x="275" y="89" text-anchor="middle" font-size="11" font-weight="bold" fill="#003366">90.0%</text>
+            
+            <rect x="370" y="70" width="50" height="280" fill="#003366" rx="3"/>
+            <text x="395" y="61" text-anchor="middle" font-size="11" font-weight="bold" fill="#003366">100%</text>
+
+            <rect x="490" y="70" width="50" height="280" fill="#003366" rx="3"/>
+            <text x="515" y="61" text-anchor="middle" font-size="11" font-weight="bold" fill="#003366">100%</text>
+
+            <rect x="610" y="98" width="50" height="252" fill="#003366" rx="3"/>
+            <text x="635" y="89" text-anchor="middle" font-size="11" font-weight="bold" fill="#003366">90.0%</text>
+
+            <!-- Latency Line (Orange) -->
+            <polyline points="155,154 275,171 395,176 515,193 635,115" fill="none" stroke="#ff9900" stroke-width="4"/>
+            <circle cx="155" cy="154" r="6" fill="#ff9900" stroke="#ffffff" stroke-width="2"/>
+            <text x="155" y="142" text-anchor="middle" font-size="10" font-weight="bold" fill="#cc7a00">3.5s</text>
+
+            <circle cx="275" cy="171" r="6" fill="#ff9900" stroke="#ffffff" stroke-width="2"/>
+            <text x="275" y="159" text-anchor="middle" font-size="10" font-weight="bold" fill="#cc7a00">3.2s</text>
+
+            <circle cx="395" cy="176" r="6" fill="#ff9900" stroke="#ffffff" stroke-width="2"/>
+            <text x="395" y="164" text-anchor="middle" font-size="10" font-weight="bold" fill="#cc7a00">3.1s</text>
+
+            <circle cx="515" cy="193" r="6" fill="#ff9900" stroke="#ffffff" stroke-width="2"/>
+            <text x="515" y="181" text-anchor="middle" font-size="10" font-weight="bold" fill="#cc7a00">2.8s</text>
+
+            <circle cx="635" cy="115" r="6" fill="#ff9900" stroke="#ffffff" stroke-width="2"/>
+            <text x="635" y="103" text-anchor="middle" font-size="10" font-weight="bold" fill="#cc7a00">4.2s</text>
+
+            <!-- X-Axis Labels -->
+            <text x="155" y="375" text-anchor="middle" font-size="11" font-weight="bold" fill="#333333">Mark Sheet</text>
+            <text x="275" y="375" text-anchor="middle" font-size="11" font-weight="bold" fill="#333333">Invoice</text>
+            <text x="395" y="375" text-anchor="middle" font-size="11" font-weight="bold" fill="#333333">Certificate</text>
+            <text x="515" y="375" text-anchor="middle" font-size="11" font-weight="bold" fill="#333333">ID Card</text>
+            <text x="635" y="375" text-anchor="middle" font-size="11" font-weight="bold" fill="#333333">Attendance Reg.</text>
+
+            <!-- Legend -->
+            <rect x="230" y="410" width="340" height="30" fill="#f9f9f9" stroke="#cccccc" stroke-width="1" rx="4"/>
+            <rect x="250" y="420" width="16" height="12" fill="#003366" rx="2"/>
+            <text x="275" y="430" font-size="11" fill="#333333">Classification Accuracy (%)</text>
+            
+            <line x1="430" y1="426" x2="460" y2="426" stroke="#ff9900" stroke-width="3"/>
+            <circle cx="445" cy="426" r="4" fill="#ff9900"/>
+            <text x="470" y="430" font-size="11" fill="#333333">Latency (seconds)</text>
+          </svg>
+        </div>
+      </div>
+    </div>
+
+    <!-- TAB 3: Fig 8 Baseline Comparison -->
+    <div id="tab3" class="space-y-6 hidden">
+      <div class="bg-[var(--card)] border border-[var(--border)] rounded-xl p-6 shadow-sm">
+        <h2 class="text-lg font-bold text-[var(--foreground)] mb-1">Fig. 8: Head-to-Head Baseline Comparison</h2>
+        <p class="text-sm text-[var(--muted-foreground)] mb-4">Comparison between Proposed Local Qwen VLM, DigitCNN, Gemini Flash (hosted API), and Tesseract OCR.</p>
+
+        <!-- SVG Graph 8 -->
+        <div class="w-full overflow-x-auto bg-white p-4 rounded-lg border border-gray-200">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450" class="w-full h-auto max-w-4xl mx-auto">
+            <!-- Grid Lines -->
+            <line x1="100" y1="340" x2="720" y2="340" stroke="#eeeeee" stroke-width="1"/>
+            <line x1="100" y1="270" x2="720" y2="270" stroke="#eeeeee" stroke-width="1"/>
+            <line x1="100" y1="200" x2="720" y2="200" stroke="#eeeeee" stroke-width="1"/>
+            <line x1="100" y1="130" x2="720" y2="130" stroke="#eeeeee" stroke-width="1"/>
+            <line x1="100" y1="60" x2="720" y2="60" stroke="#eeeeee" stroke-width="1"/>
+            
+            <!-- Axes -->
+            <line x1="100" y1="340" x2="720" y2="340" stroke="#333333" stroke-width="2"/>
+            <line x1="100" y1="50" x2="100" y2="340" stroke="#003366" stroke-width="2"/>
+            
+            <!-- Y-Axis Labels -->
+            <text x="90" y="345" text-anchor="end" font-size="11" fill="#003366">0%</text>
+            <text x="90" y="275" text-anchor="end" font-size="11" fill="#003366">25%</text>
+            <text x="90" y="205" text-anchor="end" font-size="11" fill="#003366">50%</text>
+            <text x="90" y="135" text-anchor="end" font-size="11" fill="#003366">75%</text>
+            <text x="90" y="65" text-anchor="end" font-size="11" fill="#003366" font-weight="bold">100%</text>
+            <text x="45" y="195" text-anchor="middle" font-size="12" font-weight="bold" fill="#003366" transform="rotate(-90, 45, 195)">Extraction Accuracy (%)</text>
+
+            <!-- Bars -->
+            <rect x="140" y="126" width="90" height="214" fill="#7f7f7f" rx="4"/>
+            <text x="185" y="115" text-anchor="middle" font-size="12" font-weight="bold" fill="#555555">76.4%</text>
+            <text x="185" y="365" text-anchor="middle" font-size="11" font-weight="bold" fill="#333333">Tesseract OCR</text>
+            <text x="185" y="382" text-anchor="middle" font-size="10" fill="#666666">0.8 s / page</text>
+            <rect x="145" y="392" width="80" height="18" fill="#d4edda" stroke="#28a745" stroke-width="1" rx="3"/>
+            <text x="185" y="405" text-anchor="middle" font-size="10" font-weight="bold" fill="#155724">Local Private</text>
+
+            <rect x="290" y="98" width="90" height="242" fill="#4682b4" rx="4"/>
+            <text x="335" y="87" text-anchor="middle" font-size="12" font-weight="bold" fill="#4682b4">86.4%</text>
+            <text x="335" y="365" text-anchor="middle" font-size="11" font-weight="bold" fill="#333333">DigitCNN</text>
+            <text x="335" y="382" text-anchor="middle" font-size="10" fill="#666666">0.005 s / cell</text>
+            <rect x="295" y="392" width="80" height="18" fill="#d4edda" stroke="#28a745" stroke-width="1" rx="3"/>
+            <text x="335" y="405" text-anchor="middle" font-size="10" font-weight="bold" fill="#155724">Local Private</text>
+
+            <rect x="440" y="89" width="90" height="251" fill="#ff7f0e" rx="4"/>
+            <text x="485" y="78" text-anchor="middle" font-size="12" font-weight="bold" fill="#ff7f0e">89.5%</text>
+            <text x="485" y="365" text-anchor="middle" font-size="11" font-weight="bold" fill="#333333">Gemini Flash (Ref)</text>
+            <text x="485" y="382" text-anchor="middle" font-size="10" fill="#666666">1.2 s / page</text>
+            <rect x="445" y="392" width="80" height="18" fill="#f8d7da" stroke="#dc3545" stroke-width="1" rx="3"/>
+            <text x="485" y="405" text-anchor="middle" font-size="10" font-weight="bold" fill="#721c24">Cloud (API Risk)</text>
+
+            <rect x="590" y="62" width="90" height="278" fill="#008000" rx="4"/>
+            <text x="635" y="51" text-anchor="middle" font-size="13" font-weight="bold" fill="#008000">99.4%</text>
+            <text x="635" y="365" text-anchor="middle" font-size="11" font-weight="bold" fill="#008000">Proposed Local</text>
+            <text x="635" y="382" text-anchor="middle" font-size="10" font-weight="bold" fill="#008000">3.4 s / page</text>
+            <rect x="595" y="392" width="80" height="18" fill="#d4edda" stroke="#28a745" stroke-width="2" rx="3"/>
+            <text x="635" y="405" text-anchor="middle" font-size="10" font-weight="bold" fill="#155724">Local Private ✓</text>
+          </svg>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <script>
+    function showTab(num) {
+      for (let i = 1; i <= 3; i++) {
+        document.getElementById('tab' + i).classList.add('hidden');
+        const btn = document.getElementById('tab' + i + '-btn');
+        btn.classList.remove('tab-active');
+        btn.classList.add('text-[var(--muted-foreground)]');
+      }
+      document.getElementById('tab' + num).classList.remove('hidden');
+      const activeBtn = document.getElementById('tab' + num + '-btn');
+      activeBtn.classList.add('tab-active');
+      activeBtn.classList.remove('text-[var(--muted-foreground)]');
+    }
+  </script>
+</body>
+</html>

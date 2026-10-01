@@ -1,0 +1,69 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="800" height="500" style="background:#ffffff; font-family: Arial, sans-serif;">
+  <rect width="100%" height="100%" fill="#ffffff" />
+  
+  <!-- Title & Subtitle -->
+  <text x="400" y="30" text-anchor="middle" font-size="18" font-weight="bold" fill="#003366">Fig. 8: Head-to-Head Baseline Comparison</text>
+  <text x="400" y="50" text-anchor="middle" font-size="13" fill="#555555">Field Extraction Accuracy &amp; Data Privacy across Evaluation Baselines</text>
+  
+  <!-- Grid Lines -->
+  <line x1="100" y1="380" x2="720" y2="380" stroke="#dddddd" stroke-width="1"/>
+  <line x1="100" y1="310" x2="720" y2="310" stroke="#eeeeee" stroke-width="1"/>
+  <line x1="100" y1="240" x2="720" y2="240" stroke="#eeeeee" stroke-width="1"/>
+  <line x1="100" y1="170" x2="720" y2="170" stroke="#eeeeee" stroke-width="1"/>
+  <line x1="100" y1="100" x2="720" y2="100" stroke="#eeeeee" stroke-width="1"/>
+  
+  <!-- Axes -->
+  <line x1="100" y1="380" x2="720" y2="380" stroke="#333333" stroke-width="2"/>
+  <line x1="100" y1="80" x2="100" y2="380" stroke="#003366" stroke-width="2"/>
+  
+  <!-- Y-Axis Labels -->
+  <text x="90" y="385" text-anchor="end" font-size="11" fill="#003366">0%</text>
+  <text x="90" y="315" text-anchor="end" font-size="11" fill="#003366">25%</text>
+  <text x="90" y="245" text-anchor="end" font-size="11" fill="#003366">50%</text>
+  <text x="90" y="175" text-anchor="end" font-size="11" fill="#003366">75%</text>
+  <text x="90" y="105" text-anchor="end" font-size="11" fill="#003366" font-weight="bold">100%</text>
+  <text x="45" y="230" text-anchor="middle" font-size="13" font-weight="bold" fill="#003366" transform="rotate(-90, 45, 230)">Extraction Accuracy (%)</text>
+
+  <!-- Bars:
+       1. Tesseract v5 + Rules (76.4% -> h=214 -> y=166)
+       2. DigitCNN (86.4% -> h=242 -> y=138)
+       3. Gemini 3.6 Flash (89.5% -> h=251 -> y=129)
+       4. Local Qwen2.5-VL 7B (99.4% -> h=278 -> y=102)
+  -->
+  <!-- Tesseract -->
+  <rect x="140" y="166" width="90" height="214" fill="#7f7f7f" rx="4"/>
+  <text x="185" y="155" text-anchor="middle" font-size="12" font-weight="bold" fill="#555555">76.4%</text>
+  <text x="185" y="405" text-anchor="middle" font-size="11" font-weight="bold" fill="#333333">Tesseract OCR</text>
+  <text x="185" y="422" text-anchor="middle" font-size="10" fill="#666666">0.8 s / page</text>
+  <rect x="145" y="432" width="80" height="18" fill="#d4edda" stroke="#28a745" stroke-width="1" rx="3"/>
+  <text x="185" y="445" text-anchor="middle" font-size="10" font-weight="bold" fill="#155724">Local Private</text>
+
+  <!-- DigitCNN -->
+  <rect x="290" y="138" width="90" height="242" fill="#4682b4" rx="4"/>
+  <text x="335" y="127" text-anchor="middle" font-size="12" font-weight="bold" fill="#4682b4">86.4%</text>
+  <text x="335" y="405" text-anchor="middle" font-size="11" font-weight="bold" fill="#333333">DigitCNN</text>
+  <text x="335" y="422" text-anchor="middle" font-size="10" fill="#666666">0.005 s / cell</text>
+  <rect x="295" y="432" width="80" height="18" fill="#d4edda" stroke="#28a745" stroke-width="1" rx="3"/>
+  <text x="335" y="445" text-anchor="middle" font-size="10" font-weight="bold" fill="#155724">Local Private</text>
+
+  <!-- Gemini Flash -->
+  <rect x="440" y="129" width="90" height="251" fill="#ff7f0e" rx="4"/>
+  <text x="485" y="118" text-anchor="middle" font-size="12" font-weight="bold" fill="#ff7f0e">89.5%</text>
+  <text x="485" y="405" text-anchor="middle" font-size="11" font-weight="bold" fill="#333333">Gemini Flash (Ref)</text>
+  <text x="485" y="422" text-anchor="middle" font-size="10" fill="#666666">1.2 s / page</text>
+  <rect x="445" y="432" width="80" height="18" fill="#f8d7da" stroke="#dc3545" stroke-width="1" rx="3"/>
+  <text x="485" y="445" text-anchor="middle" font-size="10" font-weight="bold" fill="#721c24">Cloud (API Risk)</text>
+
+  <!-- Proposed Local Qwen -->
+  <rect x="590" y="102" width="90" height="278" fill="#008000" rx="4"/>
+  <text x="635" y="91" text-anchor="middle" font-size="13" font-weight="bold" fill="#008000">99.4%</text>
+  <text x="635" y="405" text-anchor="middle" font-size="11" font-weight="bold" fill="#008000">Proposed Local</text>
+  <text x="635" y="422" text-anchor="middle" font-size="10" font-weight="bold" fill="#008000">3.4 s / page</text>
+  <rect x="595" y="432" width="80" height="18" fill="#d4edda" stroke="#28a745" stroke-width="2" rx="3"/>
+  <text x="635" y="445" text-anchor="middle" font-size="10" font-weight="bold" fill="#155724">Local Private ✓</text>
+
+  <!-- Callout box over Proposed -->
+  <path d="M 635 80 L 630 65 L 640 65 Z" fill="#008000"/>
+  <rect x="535" y="35" width="200" height="30" fill="#e6ffe6" stroke="#008000" stroke-width="1.5" rx="4"/>
+  <text x="635" y="54" text-anchor="middle" font-size="11" font-weight="bold" fill="#008000">Highest Accuracy &amp; 100% On-Premise</text>
+</svg>

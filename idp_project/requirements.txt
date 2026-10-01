@@ -1,0 +1,11 @@
+opencv-python-headless
+pillow
+pytesseract
+numpy
+pandas
+openpyxl
+streamlit
+PyMuPDF
+torch
+google-genai
+json-repair
